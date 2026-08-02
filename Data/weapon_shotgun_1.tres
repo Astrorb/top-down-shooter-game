@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b56wrfby01fdn"]
+
+[ext_resource type="Texture2D" uid="uid://kgtvsn78ykg8" path="res://Sprites/Weapons/weapon_3_shotgun.png" id="1_afk3p"]
+[ext_resource type="Script" uid="uid://b6m5d2i65wg18" path="res://Data/weapon_data.gd" id="2_ck0d2"]
+
+[resource]
+script = ExtResource("2_ck0d2")
+gun_sprite = ExtResource("1_afk3p")
+gun_color = Color(0.32391366, 0.5997785, 1, 1)
+buy_price = 25
+damager = 1.5
+delay_btw_shots = 0.4
+metadata/_custom_type_script = "uid://b6m5d2i65wg18"

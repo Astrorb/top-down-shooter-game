@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://vgps5bx4gwq6"]
+
+[ext_resource type="Script" uid="uid://fmqagvulm8wj" path="res://Scene/Game/game.gd" id="1_cvfki"]
+[ext_resource type="PackedScene" uid="uid://bp4ng2qdmmymb" path="res://Scene/Player/Player.tscn" id="1_ieffa"]
+[ext_resource type="Texture2D" uid="uid://drpmj5jkfv8o7" path="res://Sprites/Extras/crosshair.png" id="3_1k6df"]
+[ext_resource type="Texture2D" uid="uid://ubm1eqcoxtwx" path="res://Sprites/Environment/ground2_white.png" id="4_1k6df"]
+[ext_resource type="AudioStream" uid="uid://c3h5mideq18id" path="res://Sound/music.mp3" id="5_p5aa2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12j5o"]
+size = Vector2(6144, 100)
+
+[node name="Game" type="Node2D" unique_id=305857046]
+script = ExtResource("1_cvfki")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=254838499]
+modulate = Color(0.6956857, 0.4856037, 0.26569054, 1)
+position = Vector2(-3072, -3072)
+scale = Vector2(3, 3)
+texture = ExtResource("4_1k6df")
+centered = false
+
+[node name="Crosshair" type="Sprite2D" parent="." unique_id=874495113]
+texture = ExtResource("3_1k6df")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1228610073]
+zoom = Vector2(0.65, 0.65)
+limit_left = -3072
+limit_top = -3072
+limit_right = 3072
+limit_bottom = 3072
+limit_smoothed = true
+
+[node name="Player" parent="." unique_id=1437738598 instance=ExtResource("1_ieffa")]
+position = Vector2(648, 632)
+
+[node name="Colliders" type="Node2D" parent="." unique_id=213078241]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Colliders" unique_id=521303601]
+position = Vector2(0, -3120)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D" unique_id=1676936818]
+shape = SubResource("RectangleShape2D_12j5o")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Colliders" unique_id=1363143834]
+position = Vector2(0, 3120)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D2" unique_id=4327341]
+shape = SubResource("RectangleShape2D_12j5o")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Colliders" unique_id=1146758051]
+position = Vector2(-3120, 0)
+rotation = 1.5707964
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D3" unique_id=370498867]
+shape = SubResource("RectangleShape2D_12j5o")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Colliders" unique_id=1439898571]
+position = Vector2(3120, 0)
+rotation = 1.5707964
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D4" unique_id=1908798365]
+shape = SubResource("RectangleShape2D_12j5o")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=667907051]
+stream = ExtResource("5_p5aa2")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
