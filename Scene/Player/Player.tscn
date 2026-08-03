@@ -162,7 +162,8 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("28_mymiu")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=1355275345]
-position = Vector2(0, -41)
+visible = false
+position = Vector2(0, -66)
 script = ExtResource("30_tx8yv")
 
 [node name="WeaponSprite" type="Sprite2D" parent="Weapon" unique_id=1501883095]

@@ -5,6 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://drpmj5jkfv8o7" path="res://Sprites/Extras/crosshair.png" id="3_1k6df"]
 [ext_resource type="Texture2D" uid="uid://ubm1eqcoxtwx" path="res://Sprites/Environment/ground2_white.png" id="4_1k6df"]
 [ext_resource type="AudioStream" uid="uid://c3h5mideq18id" path="res://Sound/music.mp3" id="5_p5aa2"]
+[ext_resource type="PackedScene" uid="uid://ctrmht4ovc433" path="res://Scene/Weapon/weapon_pickup.tscn" id="6_c8ohb"]
+[ext_resource type="Resource" uid="uid://24y6jop8n1q8" path="res://Data/weapon_pistol_1.tres" id="7_hwnlp"]
+[ext_resource type="Resource" uid="uid://jkinpo7nwbuv" path="res://Data/weapon_pistol_2.tres" id="8_rnwkg"]
+[ext_resource type="Resource" uid="uid://c7dmbvke3e3y2" path="res://Data/weapon_m4_1.tres" id="9_kubpf"]
+[ext_resource type="Resource" uid="uid://6vl7kqrieqyv" path="res://Data/weapon_m4_2.tres" id="10_usurt"]
+[ext_resource type="Resource" uid="uid://b56wrfby01fdn" path="res://Data/weapon_shotgun_1.tres" id="11_fklig"]
+[ext_resource type="Resource" uid="uid://fh8sa3wcj0ja" path="res://Data/weapon_shotgun_2.tres" id="12_dbl33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12j5o"]
 size = Vector2(6144, 100)
@@ -13,7 +20,7 @@ size = Vector2(6144, 100)
 script = ExtResource("1_cvfki")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=254838499]
-modulate = Color(0.6956857, 0.4856037, 0.26569054, 1)
+modulate = Color(0.8091655, 0.66433537, 0.53304374, 1)
 position = Vector2(-3072, -3072)
 scale = Vector2(3, 3)
 texture = ExtResource("4_1k6df")
@@ -23,7 +30,7 @@ centered = false
 texture = ExtResource("3_1k6df")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1228610073]
-zoom = Vector2(0.65, 0.65)
+zoom = Vector2(0.25, 0.25)
 limit_left = -3072
 limit_top = -3072
 limit_right = 3072
@@ -70,3 +77,29 @@ stream = ExtResource("5_p5aa2")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"
+
+[node name="Weapon" type="Node2D" parent="." unique_id=2032247511]
+
+[node name="WeaponPickup" parent="Weapon" unique_id=505149564 instance=ExtResource("6_c8ohb")]
+position = Vector2(-751.99994, 0)
+weapon_data = ExtResource("7_hwnlp")
+
+[node name="WeaponPickup2" parent="Weapon" unique_id=521996335 instance=ExtResource("6_c8ohb")]
+position = Vector2(-451.99994, 0)
+weapon_data = ExtResource("8_rnwkg")
+
+[node name="WeaponPickup3" parent="Weapon" unique_id=348007971 instance=ExtResource("6_c8ohb")]
+position = Vector2(-151.99994, 0)
+weapon_data = ExtResource("9_kubpf")
+
+[node name="WeaponPickup4" parent="Weapon" unique_id=1987610206 instance=ExtResource("6_c8ohb")]
+position = Vector2(148.00006, 0)
+weapon_data = ExtResource("10_usurt")
+
+[node name="WeaponPickup5" parent="Weapon" unique_id=1269385407 instance=ExtResource("6_c8ohb")]
+position = Vector2(448.00006, 0)
+weapon_data = ExtResource("11_fklig")
+
+[node name="WeaponPickup6" parent="Weapon" unique_id=2050511428 instance=ExtResource("6_c8ohb")]
+position = Vector2(748.00006, 0)
+weapon_data = ExtResource("12_dbl33")

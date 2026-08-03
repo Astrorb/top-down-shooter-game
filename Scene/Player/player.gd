@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var move_spd := 700
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weapon: Weapon = $Weapon
@@ -7,8 +9,6 @@ extends CharacterBody2D
 var can_move := true
 var mouse_pos: Vector2
 
-func _ready() -> void:
-	weapon.init_weapon(load("uid://b56wrfby01fdn"))	
 
 func _process(delta: float) -> void:
 	if not can_move:
@@ -29,6 +29,10 @@ func _physics_process(delta: float) -> void:
 	#velocity 是 CharacterBody2D 内置自带属性，本身就是 Vector2 类型，接收移动速度向量。
 	velocity = movement
 	move_and_slide()
+	
+func setup_weapon(weapon_data: WeaponData) -> void:
+	weapon.init_weapon(weapon_data)
+	weapon.show()
 
 func get_mouse_pos() -> void:
 	mouse_pos = get_global_mouse_position()
