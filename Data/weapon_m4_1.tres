@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c7dmbvke3e3y2"]
 
 [ext_resource type="Texture2D" uid="uid://qlmyauce5r36" path="res://Sprites/Weapons/weapon_2_m4.png" id="1_tif2e"]
+[ext_resource type="PackedScene" uid="uid://dl0i7xymnvh4n" path="res://Scene/Bullet/single_bullet.tscn" id="1_uq40i"]
 [ext_resource type="Script" uid="uid://b6m5d2i65wg18" path="res://Data/weapon_data.gd" id="2_uq40i"]
 
 [resource]
@@ -8,6 +9,7 @@ script = ExtResource("2_uq40i")
 gun_sprite = ExtResource("1_tif2e")
 gun_color = Color(0.8039216, 0.90588236, 0, 1)
 buy_price = 25
-damager = 1.2
 delay_btw_shots = 0.2
+bullet_scene = ExtResource("1_uq40i")
+fire_pos = Vector2(148, 2)
 metadata/_custom_type_script = "uid://b6m5d2i65wg18"

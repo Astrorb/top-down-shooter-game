@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dl0i7xymnvh4n"]
+
+[ext_resource type="Script" uid="uid://cokvkw7ff8d4o" path="res://Scene/Bullet/single_bullet.gd" id="1_vlge3"]
+[ext_resource type="Texture2D" uid="uid://b6irhpunowl8a" path="res://Sprites/Extras/bullet.png" id="2_o4q2v"]
+[ext_resource type="Texture2D" uid="uid://b0d6xe0sreis5" path="res://Sprites/Shadow.png" id="3_mnxhr"]
+[ext_resource type="AudioStream" uid="uid://d2usimra7pxry" path="res://Sound/Explosion.wav" id="4_081tc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o4q2v"]
+radius = 575.87555
+
+[node name="SingleBullet" type="Node2D" unique_id=106184309]
+script = ExtResource("1_vlge3")
+speed = 1500.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=878502972]
+scale = Vector2(0.07, 0.07)
+collision_layer = 8
+collision_mask = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1794500884]
+texture = ExtResource("2_o4q2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=383756915]
+shape = SubResource("CircleShape2D_o4q2v")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1431457249]
+modulate = Color(1, 1, 1, 0.47843137)
+position = Vector2(0, 117)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_mnxhr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=395904869]
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=219019025]
+stream = ExtResource("4_081tc")
+volume_db = -15.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

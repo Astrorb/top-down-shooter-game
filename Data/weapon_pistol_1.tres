@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://24y6jop8n1q8"]
 
 [ext_resource type="Script" uid="uid://b6m5d2i65wg18" path="res://Data/weapon_data.gd" id="1_3clof"]
+[ext_resource type="PackedScene" uid="uid://dl0i7xymnvh4n" path="res://Scene/Bullet/single_bullet.tscn" id="1_skova"]
 [ext_resource type="Texture2D" uid="uid://k1o2nroluihr" path="res://Sprites/Weapons/weapon_1_pistol.png" id="1_wxkw4"]
 
 [resource]
 script = ExtResource("1_3clof")
 gun_sprite = ExtResource("1_wxkw4")
 gun_color = Color(3.272891e-06, 0.7154247, 0.8261278, 1)
-damager = 0.5
 delay_btw_shots = 0.3
+bullet_scene = ExtResource("1_skova")
+fire_pos = Vector2(140, -9)
 metadata/_custom_type_script = "uid://b6m5d2i65wg18"

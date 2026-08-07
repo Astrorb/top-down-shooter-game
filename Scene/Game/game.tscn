@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://6vl7kqrieqyv" path="res://Data/weapon_m4_2.tres" id="10_usurt"]
 [ext_resource type="Resource" uid="uid://b56wrfby01fdn" path="res://Data/weapon_shotgun_1.tres" id="11_fklig"]
 [ext_resource type="Resource" uid="uid://fh8sa3wcj0ja" path="res://Data/weapon_shotgun_2.tres" id="12_dbl33"]
+[ext_resource type="PackedScene" uid="uid://ciytiuxkyb10h" path="res://extra/rock.tscn" id="13_rnwkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12j5o"]
 size = Vector2(6144, 100)
@@ -103,3 +104,29 @@ weapon_data = ExtResource("11_fklig")
 [node name="WeaponPickup6" parent="Weapon" unique_id=2050511428 instance=ExtResource("6_c8ohb")]
 position = Vector2(748.00006, 0)
 weapon_data = ExtResource("12_dbl33")
+
+[node name="Rock" type="Node2D" parent="." unique_id=1373547486]
+
+[node name="Rock" parent="Rock" unique_id=1285239287 instance=ExtResource("13_rnwkg")]
+position = Vector2(-2048, 552)
+
+[node name="Rock2" parent="Rock" unique_id=41563906 instance=ExtResource("13_rnwkg")]
+position = Vector2(1655.9999, -687.99994)
+
+[node name="Rock3" parent="Rock" unique_id=1377914509 instance=ExtResource("13_rnwkg")]
+position = Vector2(-727.99994, -735.99994)
+
+[node name="Rock4" parent="Rock" unique_id=469152421 instance=ExtResource("13_rnwkg")]
+position = Vector2(1575.9999, 1247.9999)
+
+[node name="Rock5" parent="Rock" unique_id=342782927 instance=ExtResource("13_rnwkg")]
+position = Vector2(-1359.9999, 1527.9999)
+
+[node name="Rock6" parent="Rock" unique_id=28965857 instance=ExtResource("13_rnwkg")]
+position = Vector2(112.00003, 1592)
+
+[node name="Rock7" parent="Rock" unique_id=241955656 instance=ExtResource("13_rnwkg")]
+position = Vector2(1415.9999, 2040)
+
+[node name="Rock8" parent="Rock" unique_id=782588372 instance=ExtResource("13_rnwkg")]
+position = Vector2(-1703.9999, -1991.9998)

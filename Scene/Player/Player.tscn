@@ -29,8 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://dl6wf3lilmpds" path="res://Sprites/Entities/Char 1/walk_6.png" id="23_vlmxv"]
 [ext_resource type="Texture2D" uid="uid://b145gvhu4ameq" path="res://Sprites/Entities/Char 1/walk_7.png" id="24_7viqf"]
 [ext_resource type="Texture2D" uid="uid://b0d6xe0sreis5" path="res://Sprites/Shadow.png" id="28_mymiu"]
-[ext_resource type="Texture2D" uid="uid://k1o2nroluihr" path="res://Sprites/Weapons/weapon_1_pistol.png" id="30_17ddt"]
-[ext_resource type="Script" uid="uid://cfd230uq7pius" path="res://Scene/Player/weapon.gd" id="30_tx8yv"]
+[ext_resource type="PackedScene" uid="uid://bu1v8mfgncpce" path="res://Scene/Weapon/weapon.tscn" id="30_17ddt"]
+[ext_resource type="Texture2D" uid="uid://kgtvsn78ykg8" path="res://Sprites/Weapons/weapon_3_shotgun.png" id="31_tx8yv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_12j5o"]
 animations = [{
@@ -161,15 +161,14 @@ modulate = Color(1, 1, 1, 0.4862745)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("28_mymiu")
 
-[node name="Weapon" type="Node2D" parent="." unique_id=1355275345]
+[node name="Weapon" parent="." unique_id=1466562267 instance=ExtResource("30_17ddt")]
 visible = false
 position = Vector2(0, -66)
-script = ExtResource("30_tx8yv")
 
-[node name="WeaponSprite" type="Sprite2D" parent="Weapon" unique_id=1501883095]
-position = Vector2(87.25, 6)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("30_17ddt")
+[node name="WeaponSprite" parent="Weapon" index="0" unique_id=2110461014]
+texture = ExtResource("31_tx8yv")
 
-[node name="FirePos" type="Marker2D" parent="Weapon" unique_id=1171686868]
-position = Vector2(135.25, -8.7)
+[node name="FirePos" parent="Weapon" index="1" unique_id=454216350]
+position = Vector2(187, -10)
+
+[editable path="Weapon"]

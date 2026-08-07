@@ -1,5 +1,7 @@
-res://autoloads/
+res://extra/
+res://Scene/Bullet/
 res://Scene/Weapon/
+res://autoloads/
 res://Data/
 res://Scene/Game/
 res://Scene/

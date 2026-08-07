@@ -1,8 +1,11 @@
-res://Scene/Weapon/weapon_pickup.tscn
-res://default_bus_layout.tres
-res://Scene/Weapon/weapon_pickup.gd
+res://Scene/Weapon/weapon.tscn
 res://Scene/Player/Player.tscn
-res://autoloads/game_manager.gd
-res://Scene/Player/player.gd
+res://Scene/Weapon/weapon.gd
+res://extra/rock.tscn
 res://Scene/Game/game.tscn
-res://Scene/Game/game.gd
+res://Scene/Bullet/bullet_shotgun.tscn
+res://Scene/Bullet/single_bullet.tscn
+res://extra/explore_anim.tscn
+res://autoloads/game_manager.gd
+res://Scene/Bullet/single_bullet.gd
+res://Scene/Weapon/weapon_pickup.tscn
