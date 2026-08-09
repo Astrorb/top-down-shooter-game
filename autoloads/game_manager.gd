@@ -2,7 +2,7 @@ extends Node
 
 #预加载爆炸动画资源
 const EXPLORE_ANIM = preload("uid://wn3j770b40go")
-
+signal on_enemy_died
 #角色引用
 var player: Player
 

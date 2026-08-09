@@ -1,9 +1,11 @@
-StaticBody2D
-AudioStreamPlayer
-AnimatedSprite2D
-Node2D
+Node
 Sprite2D
 CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
+StaticBody2D
+AudioStreamPlayer
+Node2D
 Area2D
 AnimationPlayer
 VisibleOnScreenNotifier2D
@@ -11,4 +13,3 @@ Label
 TextureRect
 HBoxContainer
 Marker2D
-Camera2D

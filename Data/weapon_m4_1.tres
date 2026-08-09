@@ -9,6 +9,7 @@ script = ExtResource("2_uq40i")
 gun_sprite = ExtResource("1_tif2e")
 gun_color = Color(0.8039216, 0.90588236, 0, 1)
 buy_price = 25
+damage = 1.2
 delay_btw_shots = 0.2
 bullet_scene = ExtResource("1_uq40i")
 fire_pos = Vector2(148, 2)

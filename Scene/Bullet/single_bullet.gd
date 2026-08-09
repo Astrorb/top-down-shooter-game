@@ -23,6 +23,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	explosion_sound.play()
 	#延迟 0.08 秒,听到爆炸声，再删除当前节点
 	await get_tree().create_timer(0.08).timeout
+	if body is Enemy:
+		var enemy := body as Enemy
+		enemy.health_component.take_damage(damage)
 	queue_free()
 	
 #移动到屏幕外销毁

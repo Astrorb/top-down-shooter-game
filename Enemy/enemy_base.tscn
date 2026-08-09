@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cu7qq85hwk7pq"]
+
+[ext_resource type="Script" uid="uid://csdk2euqada21" path="res://Enemy/enemy_base.gd" id="1_7h4yf"]
+[ext_resource type="PackedScene" uid="uid://b6r4i5bo5piye" path="res://Components/health_component.tscn" id="2_0kxy1"]
+
+[node name="EnemyBase" type="CharacterBody2D" unique_id=242554752]
+scale = Vector2(0.25, 0.25)
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_7h4yf")
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="." unique_id=1271767524]
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1901476531]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460272235]
+
+[node name="HealthComponent" parent="." unique_id=1821041645 instance=ExtResource("2_0kxy1")]
+
+[connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
+[connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
