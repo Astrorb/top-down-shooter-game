@@ -12,8 +12,8 @@
 [ext_resource type="Resource" uid="uid://6vl7kqrieqyv" path="res://Data/weapon_m4_2.tres" id="10_usurt"]
 [ext_resource type="Resource" uid="uid://b56wrfby01fdn" path="res://Data/weapon_shotgun_1.tres" id="11_fklig"]
 [ext_resource type="Resource" uid="uid://fh8sa3wcj0ja" path="res://Data/weapon_shotgun_2.tres" id="12_dbl33"]
-[ext_resource type="PackedScene" uid="uid://ciytiuxkyb10h" path="res://extra/rock.tscn" id="13_rnwkg"]
-[ext_resource type="PackedScene" uid="uid://dwgf842taw51q" path="res://Enemy/enemy_1.tscn" id="14_kubpf"]
+[ext_resource type="PackedScene" uid="uid://ciytiuxkyb10h" path="res://Scene/Extra/rock.tscn" id="13_rnwkg"]
+[ext_resource type="PackedScene" uid="uid://cndfton3yrmtj" path="res://Enemy/enemy_spawner.tscn" id="14_kubpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12j5o"]
 size = Vector2(6144, 100)
@@ -132,4 +132,6 @@ position = Vector2(1415.9999, 2040)
 [node name="Rock8" parent="Rock" unique_id=782588372 instance=ExtResource("13_rnwkg")]
 position = Vector2(-1703.9999, -1991.9998)
 
-[node name="Enemy_1" parent="." unique_id=242554752 instance=ExtResource("14_kubpf")]
+[node name="EnemySpawner" parent="." unique_id=437871415 instance=ExtResource("14_kubpf")]
+spawn_type = 1
+fixed_time = 1.5

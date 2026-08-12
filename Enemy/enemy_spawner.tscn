@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cndfton3yrmtj"]
+
+[ext_resource type="Script" uid="uid://bkouu8u0fm2yr" path="res://Enemy/enemy_spawner.gd" id="1_tqpff"]
+[ext_resource type="PackedScene" uid="uid://dwgf842taw51q" path="res://Enemy/enemy_1.tscn" id="2_p557e"]
+[ext_resource type="PackedScene" uid="uid://d2w2qmn8oyrhp" path="res://Enemy/enemy_2.tscn" id="3_qlp4s"]
+[ext_resource type="PackedScene" uid="uid://df2676r1rimqq" path="res://Enemy/enemy_3.tscn" id="4_lxa4y"]
+[ext_resource type="PackedScene" uid="uid://d0i786igvq1mv" path="res://Enemy/enemy_4.tscn" id="5_tgb6f"]
+
+[node name="EnemySpawner" type="Node" unique_id=437871415]
+script = ExtResource("1_tqpff")
+enemy_list = Array[PackedScene]([ExtResource("2_p557e"), ExtResource("3_qlp4s"), ExtResource("4_lxa4y"), ExtResource("5_tgb6f")])
+
+[node name="SpawnerTimer" type="Timer" parent="." unique_id=822167279]
+
+[connection signal="timeout" from="SpawnerTimer" to="." method="_on_spawner_timer_timeout"]
