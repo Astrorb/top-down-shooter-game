@@ -38,7 +38,7 @@ func spawn_enemy() -> void:
 	spawn_anim.queue_free()
 	
 	var random_enemy: PackedScene = enemy_list.pick_random() as PackedScene
-	var enemy = random_enemy.instantiate() as Enemy
+	var enemy = enemy_list[2].instantiate() as Enemy
 	enemy.global_position = spawn_pos
 	get_parent().add_child(enemy)
 	spawned_enemies += 1

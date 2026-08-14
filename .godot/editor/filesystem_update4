@@ -1,5 +1,6 @@
-res://Scene/Extra/enemy_spawner.tscn
-res://Enemy/enemy_spawner.tscn
-res://Enemy/enemy_spawner.gd
-res://Scene/Game/game.tscn
-res://Scene/Extra/spawn_anim.tscn
+res://Enemy/enemy_3.tscn
+res://Scene/Player/player.gd
+res://Scene/Player/Player.tscn
+res://Scene/Extra/coin.tscn
+res://autoloads/game_manager.gd
+res://Enemy/enemy_base.tscn

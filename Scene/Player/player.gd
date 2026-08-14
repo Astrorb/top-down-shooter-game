@@ -61,3 +61,11 @@ func UpdataAnimation() -> void:
 		anim_sprite.play("idle")
 		
 		
+
+
+func _on_health_component_on_damaged() -> void:
+	pass # Replace with function body.
+
+
+func _on_health_component_on_defeated() -> void:
+	pass # Replace with function body.
