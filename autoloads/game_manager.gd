@@ -4,6 +4,7 @@ signal on_enemy_died
 #预加载爆炸动画资源
 const EXPLORE_ANIM = preload("uid://wn3j770b40go")
 const COIN = preload("uid://ce1c80tw2s4g1")
+const HIT_MATERIAL = preload("uid://b5jovvr7v3k8l")
 
 #角色引用
 var player: Player

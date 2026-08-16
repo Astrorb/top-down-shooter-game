@@ -56,7 +56,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"death",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -92,14 +92,17 @@ animations = [{
 radius = 197.0
 height = 536.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajl5n"]
+radius = 300.0
+height = 680.0
+
 [node name="Enemy_4" unique_id=242554752 instance=ExtResource("1_ajl5n")]
 
 [node name="AnimSprite" parent="." index="0" unique_id=1271767524]
 position = Vector2(0, -760)
 sprite_frames = SubResource("SpriteFrames_7h4yf")
-animation = &"death"
+animation = &"move"
 autoplay = "move"
-frame_progress = 0.7925524
 
 [node name="Shadow" parent="." index="1" unique_id=1901476531]
 self_modulate = Color(1, 1, 1, 0.49411765)
@@ -108,3 +111,8 @@ texture = ExtResource("20_fno7w")
 [node name="CollisionShape2D" parent="." index="2" unique_id=1460272235]
 position = Vector2(0, -329)
 shape = SubResource("CapsuleShape2D_43oqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(422474999) index="0" unique_id=679976540]
+position = Vector2(0, -328)
+shape = SubResource("CapsuleShape2D_ajl5n")
+debug_color = Color(0.97347516, 0, 0.43709856, 0.41960785)

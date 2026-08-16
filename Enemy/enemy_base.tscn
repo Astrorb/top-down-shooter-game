@@ -17,5 +17,10 @@ script = ExtResource("1_7h4yf")
 
 [node name="HealthComponent" parent="." unique_id=1821041645 instance=ExtResource("2_0kxy1")]
 
+[node name="Area2D" type="Area2D" parent="." unique_id=422474999]
+collision_layer = 0
+collision_mask = 2
+
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

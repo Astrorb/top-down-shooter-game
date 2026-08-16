@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bfrv8867x61bj" path="res://Sprites/Entities/Char 1/death_0.png" id="1_3su45"]
 [ext_resource type="Script" uid="uid://c4ra7t80hjll4" path="res://Scene/Player/player.gd" id="1_7yuuv"]
+[ext_resource type="Material" uid="uid://b5jovvr7v3k8l" path="res://Scene/Extra/HitMaterial.tres" id="1_efd38"]
 [ext_resource type="Texture2D" uid="uid://bolqgxb6t1elc" path="res://Sprites/Entities/Char 1/idle_0.png" id="1_pmp2f"]
 [ext_resource type="Texture2D" uid="uid://diavg55shqhx" path="res://Sprites/Entities/Char 1/idle_1.png" id="2_3pik8"]
 [ext_resource type="Texture2D" uid="uid://tr485gm6nene" path="res://Sprites/Entities/Char 1/death_1.png" id="2_lbaqs"]
@@ -142,6 +143,7 @@ radius = 53.0
 height = 174.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1437738598]
+material = ExtResource("1_efd38")
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_7yuuv")

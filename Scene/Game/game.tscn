@@ -14,9 +14,20 @@
 [ext_resource type="Resource" uid="uid://fh8sa3wcj0ja" path="res://Data/weapon_shotgun_2.tres" id="12_dbl33"]
 [ext_resource type="PackedScene" uid="uid://ciytiuxkyb10h" path="res://Scene/Extra/rock.tscn" id="13_rnwkg"]
 [ext_resource type="PackedScene" uid="uid://cndfton3yrmtj" path="res://Enemy/enemy_spawner.tscn" id="14_kubpf"]
+[ext_resource type="FontFile" uid="uid://c4x0jidjvbcs3" path="res://Fonts/kenpixel_mini_square.ttf" id="15_usurt"]
+[ext_resource type="Texture2D" uid="uid://d0ioacy2yuqsg" path="res://Sprites/tile_coin.png" id="16_dbl33"]
+[ext_resource type="FontFile" uid="uid://cpj6vb8svm56d" path="res://Fonts/pixel_rpg.ttf" id="17_8idsi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12j5o"]
 size = Vector2(6144, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_12j5o"]
+font = ExtResource("15_usurt")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_61ot5"]
+font = ExtResource("17_8idsi")
+font_size = 65
 
 [node name="Game" type="Node2D" unique_id=305857046]
 script = ExtResource("1_cvfki")
@@ -74,12 +85,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D4" unique_id=1908798365]
 shape = SubResource("RectangleShape2D_12j5o")
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=667907051]
-stream = ExtResource("5_p5aa2")
-volume_db = -20.0
-autoplay = true
-bus = &"Music"
-
 [node name="Weapon" type="Node2D" parent="." unique_id=2032247511]
 
 [node name="WeaponPickup" parent="Weapon" unique_id=505149564 instance=ExtResource("6_c8ohb")]
@@ -132,6 +137,76 @@ position = Vector2(1415.9999, 2040)
 [node name="Rock8" parent="Rock" unique_id=782588372 instance=ExtResource("13_rnwkg")]
 position = Vector2(-1703.9999, -1991.9998)
 
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=667907051]
+stream = ExtResource("5_p5aa2")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="WaveTimer" type="Timer" parent="." unique_id=1368251650]
+wait_time = 5.0
+one_shot = true
+
 [node name="EnemySpawner" parent="." unique_id=437871415 instance=ExtResource("14_kubpf")]
 spawn_type = 1
 fixed_time = 1.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=120788393]
+
+[node name="GameUI" type="Control" parent="CanvasLayer" unique_id=1759953841]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WaveLabel" type="Label" parent="CanvasLayer/GameUI" unique_id=1996405981]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -196.0
+offset_right = 196.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "New Wave In"
+label_settings = SubResource("LabelSettings_12j5o")
+horizontal_alignment = 1
+
+[node name="EnemyCountLabel" type="Label" parent="CanvasLayer/GameUI" unique_id=1149048718]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.0
+offset_right = 140.0
+offset_bottom = 125.0
+grow_horizontal = 2
+text = "Enemy: 5"
+label_settings = SubResource("LabelSettings_12j5o")
+
+[node name="Coins" type="HBoxContainer" parent="CanvasLayer/GameUI" unique_id=1346619527]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 225.0
+offset_bottom = 86.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/Coins" unique_id=685255395]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("16_dbl33")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinsLabel" type="Label" parent="CanvasLayer/GameUI/Coins" unique_id=921175421]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_61ot5")
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="on_wave_completed" from="EnemySpawner" to="." method="_on_enemy_spawner_on_wave_completed"]

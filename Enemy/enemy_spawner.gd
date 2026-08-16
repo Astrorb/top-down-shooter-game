@@ -1,6 +1,8 @@
 extends Node
 
 class_name EnemySpawner
+signal on_wave_completed
+
 const SPAWN_ANIM = preload("uid://b872n84ckwb1a")
 @onready var spawner_timer: Timer = $SpawnerTimer
 
@@ -23,6 +25,8 @@ var enemy_remaining: int
 var spawned_enemies: int
 
 func _ready() -> void:
+	GameManager.on_enemy_died.connect(_on_enemy_died)
+	enemy_remaining = enemies_per_wave
 	start_enemy_timer()
 
 func spawn_enemy() -> void:
@@ -38,7 +42,7 @@ func spawn_enemy() -> void:
 	spawn_anim.queue_free()
 	
 	var random_enemy: PackedScene = enemy_list.pick_random() as PackedScene
-	var enemy = enemy_list[2].instantiate() as Enemy
+	var enemy = random_enemy.instantiate() as Enemy
 	enemy.global_position = spawn_pos
 	get_parent().add_child(enemy)
 	spawned_enemies += 1
@@ -65,3 +69,10 @@ func _on_spawner_timer_timeout() -> void:
 	#如果小于没播次生成敌人
 	spawn_enemy()
 	
+func _on_enemy_died() -> void:
+	enemy_remaining -= 1
+	if enemy_remaining <= 0:
+		spawner_timer.stop()
+		on_wave_completed.emit()
+		enemy_remaining = enemies_per_wave
+		spawned_enemies = 0
