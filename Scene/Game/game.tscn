@@ -29,12 +29,19 @@ font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_61ot5"]
 font = ExtResource("17_8idsi")
-font_size = 65
+font_size = 48
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_12j5o"]
 shader = ExtResource("19_eddb3")
 shader_parameter/outerRadius = 1.70000008075
 shader_parameter/MainAlpha = 0.800000038
+
+[sub_resource type="LabelSettings" id="LabelSettings_eddb3"]
+font = ExtResource("17_8idsi")
+font_size = 72
+font_color = Color(0.9250032, 0, 0.12796992, 1)
+outline_size = 5
+outline_color = Color(0.2572283, 0.05673983, 0.059489332, 1)
 
 [node name="Game" type="Node2D" unique_id=305857046]
 script = ExtResource("1_cvfki")
@@ -205,7 +212,7 @@ offset_right = 225.0
 offset_bottom = 86.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/Coins" unique_id=685255395]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 texture = ExtResource("16_dbl33")
 expand_mode = 1
@@ -223,6 +230,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LostLabel" type="Label" parent="CanvasLayer" unique_id=1113896200]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -11.5
+offset_right = 35.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Lost!"
+label_settings = SubResource("LabelSettings_eddb3")
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
 [connection signal="on_wave_completed" from="EnemySpawner" to="." method="_on_enemy_spawner_on_wave_completed"]

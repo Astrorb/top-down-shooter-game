@@ -1,8 +1,8 @@
+Label
 PointLight2D
 ColorRect
 ProgressBar
 AnimationPlayer
-Label
 CollisionShape2D
 Area2D
 Timer
@@ -12,4 +12,3 @@ Control
 CanvasLayer
 AudioStreamPlayer
 Sprite2D
-Node

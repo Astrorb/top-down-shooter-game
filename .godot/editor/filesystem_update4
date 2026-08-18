@@ -14,3 +14,4 @@ res://Scene/Game/game.tscn
 res://Scene/Game/camera_2d.gd
 res://Scene/Game/vignett.gdshader
 res://Scene/Bullet/single_bullet.tscn
+res://Scene/Game/game.gd

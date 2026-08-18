@@ -2,6 +2,7 @@ extends Node
 
 signal on_enemy_died
 signal on_shake_request
+signal on_player_died
 #预加载爆炸动画资源
 const EXPLORE_ANIM = preload("uid://wn3j770b40go")
 const COIN = preload("uid://ce1c80tw2s4g1")

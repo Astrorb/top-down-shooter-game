@@ -49,4 +49,5 @@ func _on_health_component_on_defeated() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	var player = body as Player
 	player.health_component.take_damage(2)
-	GameManager.play_damage_text(player.global_position,2)
+	if player.can_move:
+		GameManager.play_damage_text(player.global_position,2)

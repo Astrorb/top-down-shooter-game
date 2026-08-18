@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
+
 @export var move_spd := 700
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weapon: Weapon = $Weapon
@@ -78,3 +79,7 @@ func _on_health_component_on_defeated() -> void:
 	anim_sprite.play("dead")
 	can_move = false
 	health_bar.hide()
+	GameManager.on_player_died.emit()
+	await get_tree().create_timer(3).timeout
+	get_tree().reload_current_scene()
+	

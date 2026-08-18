@@ -13,6 +13,8 @@ config_version=5
 config/name="TopDownShooterGame"
 run/main_scene="uid://vgps5bx4gwq6"
 config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/image="uid://bbhn3hdtrcfq4"
+boot_splash/minimum_display_time=3000
 
 [audio]
 

@@ -7,7 +7,7 @@
 [node name="EnemyBase" type="CharacterBody2D" unique_id=242554752]
 scale = Vector2(0.25, 0.25)
 collision_layer = 4
-collision_mask = 11
+collision_mask = 9
 script = ExtResource("1_7h4yf")
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="." unique_id=1271767524]
