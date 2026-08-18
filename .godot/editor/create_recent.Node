@@ -1,13 +1,13 @@
+AnimationPlayer
+Label
 CollisionShape2D
 Area2D
 Timer
-Label
 TextureRect
 HBoxContainer
 Control
 CanvasLayer
 AudioStreamPlayer
-AnimationPlayer
 Sprite2D
 Node
 AnimatedSprite2D

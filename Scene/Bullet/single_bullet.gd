@@ -26,6 +26,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		var enemy := body as Enemy
 		enemy.health_component.take_damage(damage)
+		GameManager.play_damage_text(global_position,damage)
 	queue_free()
 	
 #移动到屏幕外销毁

@@ -5,6 +5,7 @@ signal on_enemy_died
 const EXPLORE_ANIM = preload("uid://wn3j770b40go")
 const COIN = preload("uid://ce1c80tw2s4g1")
 const HIT_MATERIAL = preload("uid://b5jovvr7v3k8l")
+const DAMAGE_TEXT = preload("uid://bvg7sch1b1qnh")
 
 #角色引用
 var player: Player
@@ -18,6 +19,13 @@ func play_explosion_anim(pos: Vector2) -> void:
 	get_parent().add_child(anim)
 	await anim.animation_finished
 	anim.queue_free()
+
+func play_damage_text(pos: Vector2,value: int) -> void:
+	var damage_text = DAMAGE_TEXT.instantiate() as DamageText
+	get_parent().add_child(damage_text)
+	damage_text.global_position = pos
+	damage_text.setup(value)
+	
 
 func create_coin(pos: Vector2) -> void:
 	var random_value = randf_range(0.0,100.0)
