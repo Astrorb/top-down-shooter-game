@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csdk2euqada21" path="res://Enemy/enemy_base.gd" id="1_7h4yf"]
 [ext_resource type="PackedScene" uid="uid://b6r4i5bo5piye" path="res://Components/health_component.tscn" id="2_0kxy1"]
+[ext_resource type="PackedScene" uid="uid://dde548k117uog" path="res://Scene/Extra/health_bar.tscn" id="3_w4axe"]
 
 [node name="EnemyBase" type="CharacterBody2D" unique_id=242554752]
 scale = Vector2(0.25, 0.25)
@@ -20,6 +21,13 @@ script = ExtResource("1_7h4yf")
 [node name="Area2D" type="Area2D" parent="." unique_id=422474999]
 collision_layer = 0
 collision_mask = 2
+
+[node name="HealthBar" parent="." unique_id=1837612717 instance=ExtResource("3_w4axe")]
+offset_left = -216.0
+offset_top = -848.00006
+offset_right = -216.0
+offset_bottom = -848.00006
+scale = Vector2(3, 3)
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]

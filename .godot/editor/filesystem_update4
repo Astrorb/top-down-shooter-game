@@ -5,3 +5,12 @@ res://autoloads/game_manager.gd
 res://Scene/Bullet/single_bullet.gd
 res://Enemy/enemy_base.tscn
 res://Enemy/enemy_base.gd
+res://Scene/Extra/health_bar.tscn
+res://Scene/Extra/health_bar.gd
+res://Scene/Player/Player.tscn
+res://Scene/Player/player.gd
+res://Scene/Weapon/weapon.gd
+res://Scene/Game/game.tscn
+res://Scene/Game/camera_2d.gd
+res://Scene/Game/vignett.gdshader
+res://Scene/Bullet/single_bullet.tscn

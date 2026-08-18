@@ -39,6 +39,8 @@ func shoot_bullet() -> void:
 	fire_sound.play()
 	#播放枪花
 	anim_player.play("Muzzle")
+	#屏幕震荡信号
+	GameManager.on_shake_request.emit()
 	#在根节点上添加子弹
 	get_tree().root.add_child(bullet)
 

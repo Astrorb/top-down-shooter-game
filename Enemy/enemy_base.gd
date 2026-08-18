@@ -5,6 +5,7 @@ class_name Enemy
 @onready var anim_sprite: AnimatedSprite2D = $AnimSprite
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var health_bar: HealthBar = $HealthBar
 
 var can_move: bool = true
 
@@ -24,6 +25,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_health_component_on_damaged() -> void:
+	var health_value := health_component.current_health / health_component.max_health
+	health_bar.set_value(health_value)
+	
 	anim_sprite.material = GameManager.HIT_MATERIAL
 	await get_tree().create_timer(0.3).timeout
 	anim_sprite.material = null
@@ -34,6 +38,8 @@ func _on_health_component_on_defeated() -> void:
 	anim_sprite.play("death")
 	collision_shape_2d.set_deferred("disabled",true)
 	GameManager.create_coin(global_position)
+	health_bar.hide()
+	
 	
 	await anim_sprite.animation_finished
 	GameManager.on_enemy_died.emit()

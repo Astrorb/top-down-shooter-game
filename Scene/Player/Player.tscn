@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bu1v8mfgncpce" path="res://Scene/Weapon/weapon.tscn" id="30_17ddt"]
 [ext_resource type="Texture2D" uid="uid://kgtvsn78ykg8" path="res://Sprites/Weapons/weapon_3_shotgun.png" id="31_tx8yv"]
 [ext_resource type="PackedScene" uid="uid://b6r4i5bo5piye" path="res://Components/health_component.tscn" id="32_penib"]
+[ext_resource type="PackedScene" uid="uid://dde548k117uog" path="res://Scene/Extra/health_bar.tscn" id="34_nih8w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_12j5o"]
 animations = [{
@@ -175,6 +176,12 @@ texture = ExtResource("31_tx8yv")
 position = Vector2(187, -10)
 
 [node name="HealthComponent" parent="." unique_id=1821041645 instance=ExtResource("32_penib")]
+
+[node name="HealthBar" parent="." unique_id=1837612717 instance=ExtResource("34_nih8w")]
+offset_left = -72.0
+offset_top = -250.0
+offset_right = -72.0
+offset_bottom = -250.0
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
